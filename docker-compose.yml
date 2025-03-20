@@ -1,0 +1,16 @@
+services:
+  backend:
+    #image: coucou:latest
+    build: ./api
+    ports:
+      - "8000:8000"
+  
+  frontend:
+    #image: beuh:latest
+    build: ./ui
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+volumes:
+  db_data:
